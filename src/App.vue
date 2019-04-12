@@ -22,7 +22,9 @@
         </a-menu-item>
       </a-menu>
     </a-layout-header>
-    <router-view/>
+    <a-layout-content :style="{ padding: '0 50px', marginTop: '10vh' }">
+      <router-view/>
+    </a-layout-content>
   </a-layout>
 </template>
 

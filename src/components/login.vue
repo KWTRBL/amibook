@@ -1,5 +1,5 @@
 <template>
-<div style='background-color: blue; margin-left: 20px; height: 120px;'>
+<a-layout-content>
   <a-form
     layout="inline"
     :form="form"
@@ -56,7 +56,7 @@
     </a-form-item>
   </a-form>
   <!-- <a-alert v-if='correct' message="Success Tips" type="success" showIcon /> -->
-</div>
+</a-layout-content>
 </template>
 
 <script>
