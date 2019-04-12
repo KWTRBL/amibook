@@ -1,5 +1,5 @@
 <template>
-    <div style='background-color: blue; height: 200px; justify-content: center;' >
+    <div  style='margin-left: 8%'>
         <a-form
     :form="form"
     @submit="handleSubmit"
