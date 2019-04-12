@@ -9,7 +9,7 @@
 export default {
   methods: {
     Go(){
-      this.$router.push({name: 'detail'})
+      this.$router.push({name: 'login'})
     }
   }
 

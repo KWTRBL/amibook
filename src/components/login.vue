@@ -118,6 +118,8 @@ export default {
                 text: "You won't be able to revert this!",
                 type: 'success',
               }).then((result) => {
+                // console.log(document.getElementById('Home'))
+                document.querySelector('#Home a').click()
                 return this.$router.push({name: 'home'})
               })
             }
@@ -139,6 +141,3 @@ export default {
 };
 </script>
 
-<style>
-
-</style>

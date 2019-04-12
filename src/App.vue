@@ -8,17 +8,20 @@
         :defaultSelectedKeys="['2']"
         :style="{ lineHeight: '64px' }"
       >
-        <a-menu-item key="1">
+        <a-menu-item key="1" id='Home'>
           <router-link to="/">Home</router-link>
         </a-menu-item>
-        <a-menu-item key="2">
+        <a-menu-item key="2" id='About'>
           <router-link to="/about">About</router-link> 
         </a-menu-item>
-        <a-menu-item key="3">
-          <router-link to="/detail">Detail</router-link>
+        <a-menu-item key="3" id='Login' >
+          <router-link to="/login">Login</router-link>
         </a-menu-item>
-        <a-menu-item key="4">
+        <a-menu-item key="4" id='AddBook'>
           <router-link to="/addbook">AddBook</router-link> 
+        </a-menu-item>
+          <a-menu-item key="5" id='Group'>
+        <router-link to="/group">Group</router-link> 
         </a-menu-item>
       </a-menu>
     </a-layout-header>

@@ -2,8 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import About from '@/views/About.vue'
-import Detail from '@/views/Detail.vue'
+import Login from '@/views/Login.vue'
 import AddB from '@/views/AddB.vue'
+import Group from '@/views/Group.vue'
 
 Vue.use(Router)
 
@@ -22,14 +23,20 @@ export default new Router({
       component: About 
     },
     {
-      path: '/detail',
-      name: 'detail',
-      component: Detail
+      path: '/login',
+      name: 'login',
+      component: Login
     },
     {
       path: '/addbook',
       name: 'addbook',
       component: AddB
+    },
+    {
+      path: '/group',
+      name: 'group',
+      component: Group
+
     }
 
   ]
