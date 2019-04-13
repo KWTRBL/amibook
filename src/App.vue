@@ -5,10 +5,10 @@
       <a-menu
         theme="dark"
         mode="horizontal"
-        :defaultSelectedKeys="['2']"
+        :defaultSelectedKeys="['1']"
         :style="{ lineHeight: '64px' }"
       >
-        <a-menu-item key="1" id='Home'>
+        <a-menu-item key="1" id='Home' >
           <router-link to="/">Home</router-link>
         </a-menu-item>
         <a-menu-item key="2" id='About'>

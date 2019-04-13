@@ -132,6 +132,8 @@ export default {
             footer: '<a href>Why do I have this issue?</a>'
           }).then((result) => {
                 window.location.reload()
+                SelectedKeys="['3']"
+                document.querySelector('#Login a').click()
               })
           }
         }
