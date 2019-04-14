@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home" v-bind:style="{ 'background-image': 'url(https://media.npr.org/assets/img/2015/11/18/book-awards-istock_wide-a4a7c12ac40b55e1ca11447536309bdee14841ac.jpg?s=1400)' }">
     <img alt="Vue logo" src="../assets/logo.png">
     <p>nut</p>
     <h1>nut</h1>
