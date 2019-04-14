@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color: #ececec; padding: 20px;">
+  <div style="background-color: #ececec;">
     <a-row :gutter="20">
       <a-col :span="8">
         <a-card

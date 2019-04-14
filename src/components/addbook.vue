@@ -44,14 +44,24 @@
       label="ISBN Code"
       :label-col="{ span: 5 }"
       :wrapper-col="{ span: 12 }"
+      style="text-align: left;"
     >
-      <a-input
-        v-decorator="[
-          'ISBN Code',
-          {rules: [{ required: true, message: 'Please input your ISBN Code!' }]}
-        ]"
-        placeholder="Type barcode or upload"
-      />
+      <a-Row :gutter="8">
+        <a-Col :span="12">
+          <a-input
+            v-decorator="[
+            'ISBN Code',
+            {rules: [{ required: true, message: 'Please input your ISBN Code!' }]}
+            ]"
+            placeholder="Type barcode or upload"
+          />
+        </a-Col>
+        <a-Col :span="12">
+          <a-upload name="file" :multiple="true" action="//jsonplaceholder.typicode.com/posts/" :headers="headers" @change="handleChange">
+            <a-button type="primary" shape="circle" icon="upload" :size="size"/>
+          </a-upload>
+        </a-Col>
+      </a-Row>     
     </a-form-item> 
     <a-form-item
       label="Note"

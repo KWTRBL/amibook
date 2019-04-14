@@ -5,6 +5,7 @@ import About from '@/views/About.vue'
 import Login from '@/views/Login.vue'
 import AddB from '@/views/AddB.vue'
 import Group from '@/views/Group.vue'
+import Search from '@/views/Search.vue'
 
 Vue.use(Router)
 
@@ -36,8 +37,12 @@ export default new Router({
       path: '/group',
       name: 'group',
       component: Group
-
-    }
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: Search
+    },
 
   ]
 })

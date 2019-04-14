@@ -20,8 +20,11 @@
         <a-menu-item key="addbook" id='AddBook'>
           <router-link to="/addbook">AddBook</router-link> 
         </a-menu-item>
-          <a-menu-item key="group" id='Group'>
-        <router-link to="/group">Group</router-link> 
+        <a-menu-item key="group" id='Group'>
+          <router-link to="/group">Group</router-link> 
+        </a-menu-item>
+        <a-menu-item key="search" id='Search'>
+          <router-link to="/search">Search</router-link> 
         </a-menu-item>
       </a-menu>
     </a-layout-header>
