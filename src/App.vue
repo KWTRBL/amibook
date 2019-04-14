@@ -5,22 +5,22 @@
       <a-menu
         theme="dark"
         mode="horizontal"
-        :defaultSelectedKeys="['1']"
+        :defaultSelectedKeys="getCurrentPage"
         :style="{ lineHeight: '64px' }"
       >
-        <a-menu-item key="1" id='Home' >
+        <a-menu-item key="home" id='Home' >
           <router-link to="/">Home</router-link>
         </a-menu-item>
-        <a-menu-item key="2" id='About'>
+        <a-menu-item key="about" id='About'>
           <router-link to="/about">About</router-link> 
         </a-menu-item>
-        <a-menu-item key="3" id='Login' >
+        <a-menu-item key="login" id='Login' >
           <router-link to="/login">Login</router-link>
         </a-menu-item>
-        <a-menu-item key="4" id='AddBook'>
+        <a-menu-item key="addbook" id='AddBook'>
           <router-link to="/addbook">AddBook</router-link> 
         </a-menu-item>
-          <a-menu-item key="5" id='Group'>
+          <a-menu-item key="group" id='Group'>
         <router-link to="/group">Group</router-link> 
         </a-menu-item>
       </a-menu>
@@ -30,6 +30,16 @@
     </a-layout-content>
   </a-layout>
 </template>
+
+<script>
+import { mapGetters } from 'vuex'
+
+export default {
+  computed: {
+    ...mapGetters(['getCurrentPage'])
+  }
+}
+</script>
 
 <style>
 #app {
