@@ -7,9 +7,9 @@
     <br>
     <br>
       <p style="font-size:5vw ;margin-bottom:0.5vw;">Profile</p>
-      <HelloWorld v-bind:msg="users_lst[0]"/>
+      <HelloWorld v-bind:msg="users_lst"/>
       <!-- <Card></Card> -->
-      <!-- {{who}} -->
+      <!-- {{getWho}} -->
   </div>
 </template>
 
@@ -18,52 +18,29 @@
 import HelloWorld from '@/components/homep.vue'
 // import Card from '@/componets/Card.vue'
 import axios from "axios"
-import { mapGetters, mapState } from 'vuex';
+import { mapGetters, mapState, mapMutations } from 'vuex';
 
 export default {
   name: 'home',
-  data(){
-    return {
-      id: 0,
-      pass: 0,
-      lst: [
-        {
-          name: "nut",
-          age: 20,
-
-        },
-        {
-          name: "kaew",
-          age: 20
-        },
-        {
-          name:"Mesit Nakhum",
-          phone:"0955075501",
-          line:"panlopburi",
-          numb: 420,
-          numg: 3
-        }
-      ],
-      n: 0,
-      nw: 0,
-      users_lst: null
-    }
-  },
   mounted(){
-    axios.get("http://localhost:3000/test/").then((res) => {
-      this.users_lst = res.data
+    console.log('Mounted')
+    axios.get("http://localhost:3000/test").then((res) => {
+      // tmp = res.data
+      this.setUsers(res.data)
+      // console.log(res.data)
     }).catch((error) => {
       console.log("error")
     })
   },
   methods: {
+    ...mapMutations(['setUsers'])
   },
   components: {
     HelloWorld
   },
   computed: {
-    // ...mapGetters('getWho'),
-    // ...mapState('who')
+    ...mapGetters(['getWho']),
+    ...mapState(['users_lst'])
   }
 }
 </script>

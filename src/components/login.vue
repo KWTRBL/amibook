@@ -125,7 +125,7 @@ export default {
               }).then((result) => {
                 // console.log(document.getElementById('Home'))
                 this.setWho(values['userName'])
-                document.querySelector('#Profile a').click()
+                // document.querySelector('#Profile a').click()
                 return this.$router.push({name: 'profile'})
               })
             }
@@ -137,9 +137,9 @@ export default {
             text: 'Something went wrong!',
             footer: '<a href>Why do I have this issue?</a>'
           }).then((result) => {
-                window.location.reload()
+                // window.location.reload()
                 SelectedKeys="['3']"
-                document.querySelector('#Login a').click()
+                // document.querySelector('#Login a').click()
               })
           }
         }

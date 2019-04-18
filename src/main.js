@@ -8,6 +8,8 @@ import VueSweetalert2 from 'vue-sweetalert2';
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
+import '@/permission.js'
+
 Vue.config.productionTip = false
 Vue.use(Antd)
 Vue.use(VueSweetalert2);

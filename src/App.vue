@@ -1,35 +1,5 @@
 <template >
   <a-layout id="app">
-    <a-layout-header :style="{ position: 'fixed', zIndex: 1, width: '100%' }">
-      <div class="logo" />
-      
-      <a-menu
-        theme="dark"
-        mode="horizontal"
-        :defaultSelectedKeys="getCurrentPage"
-        :style="{ lineHeight: '64 vh'}"
-      >
-        <a-menu-item style="text-align: left;" >
-          <img alt="Vue logo" 
-              src="https://image.flaticon.com/icons/png/512/1631/1631263.png"
-              style="width:5.5 vh; height:5.5vh"
-          >
-        </a-menu-item>
-        <router-link to="/"></router-link>
-        <a-menu-item key="profile" id='Profile' >
-          <router-link to="/profile" style="font-family: 'Jua', sans-serif;font-size:1.15vw">Profile</router-link>
-        </a-menu-item>
-        <a-menu-item key="addbook" id='AddBook'>
-          <router-link to="/addbook" style="font-family: 'Jua', sans-serif;font-size:1.15vw">AddBook</router-link> 
-        </a-menu-item>
-        <a-menu-item key="group" id='Group'>
-          <router-link to="/group" style="font-family: 'Jua', sans-serif;font-size:1.15vw">Group</router-link> 
-        </a-menu-item>
-        <a-menu-item key="search" id='Search'>
-          <router-link to="/search" style="font-family: 'Jua', sans-serif;font-size:1.15vw">Search</router-link> 
-        </a-menu-item>
-      </a-menu>
-    </a-layout-header>
     <a-layout-content >
       <router-view/>
     </a-layout-content>

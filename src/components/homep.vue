@@ -5,6 +5,7 @@
     <p style="font-size:2.5vw ;margin-bottom:0.5vw;" >Line ID: {{msg['line']}}</p>
     <p style="font-size:2.5vw ;margin-bottom:0.5vw;" >Number of books: {{msg['numb']}}</p>
     <p style="font-size:2.5vw ;margin-bottom:0.5vw;" >Number of group: {{msg['numg']}}</p>
+    <!-- {{msg}} -->
   </div>
 </template>
 

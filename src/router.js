@@ -5,6 +5,7 @@ import Login from '@/views/Login.vue'
 import AddB from '@/views/AddB.vue'
 import Group from '@/views/Group.vue'
 import Search from '@/views/Search.vue'
+import Main from '@/views/main.vue'
 
 Vue.use(Router)
 
@@ -13,30 +14,38 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/profile',
-      name: 'profile',
-      component: Profile
-    },
-    {
       path: '/',
+      name: "main",
+      component: Main,
+      redirect: '/home',
+      children: [
+        {
+          path: '/profile',
+          name: 'profile',
+          component: Profile
+        },
+        {
+          path: '/addbook',
+          name: 'addbook',
+          component: AddB
+        },
+        {
+          path: '/group',
+          name: 'group',
+          component: Group
+        },
+        {
+          path: '/search',
+          name: 'search',
+          component: Search
+        },
+      ]
+    },
+    
+    {
+      path: '/login',
       name: 'login',
       component: Login
     },
-    {
-      path: '/addbook',
-      name: 'addbook',
-      component: AddB
-    },
-    {
-      path: '/group',
-      name: 'group',
-      component: Group
-    },
-    {
-      path: '/search',
-      name: 'search',
-      component: Search
-    },
-
   ]
 })

@@ -6,7 +6,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    who: ''
+    who: null,
+    users_lst: null
   },
   mutations: {
     changePage(state, selected){
@@ -16,6 +17,15 @@ export default new Vuex.Store({
       
       state.who = who
       // console.log(state.who, who)
+    },
+    setUsers(state, val){
+      val.forEach(el => {
+        if(el.id == state.who){
+          // console.log("eeee")
+          state.users_lst = el
+        }
+      });
+      // state.users_lst = filter_
     }
   },
   getters: {
@@ -23,7 +33,7 @@ export default new Vuex.Store({
       return router.currentRoute['name']
     },
     getWho(state){
-      return this.state.who
+      return state.who
     }
   }
 })

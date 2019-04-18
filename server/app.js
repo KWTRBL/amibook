@@ -7,9 +7,9 @@ app.use(cors())
 users = [
     {
         id: 'nut',
-        name: "Mesit Nakhum",
-        phone: "0955075501",
-        line: "panlopburi",
+        name: "Nut Chukamphaeng",
+        phone: "1233333",
+        line: "1231231",
         numb: 420,
         numg: 3
     },
