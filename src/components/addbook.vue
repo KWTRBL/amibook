@@ -1,5 +1,5 @@
 <template>
-    <div  style='margin-left: 8%'>
+    <div  style='margin-left: 8%;'>
         <a-form
     :form="form"
     @submit="handleSubmit"
@@ -9,33 +9,37 @@
       label="Book Name"
       :label-col="{ span: 5 }"
       :wrapper-col="{ span: 12 }"
+      style="font-family: 'Jua', sans-serif;"
     >
       <a-input
         v-decorator="[
           'Book Name',
           {rules: [{ required: true, message: 'Please input your Book Name!' }]}
         ]"
+        size="large"
       />
     </a-form-item>
     <a-form-item
       label="Author"
       :label-col="{ span: 5 }"
       :wrapper-col="{ span: 12 }"
+      style="font-family: 'Jua', sans-serif;"
     >
       <a-input
         v-decorator="[
           'Author'
         ]"
+        size="large"
       />
     </a-form-item>
     <a-form-item
       label="Upload Picture:"
       :label-col="{ span: 5 }"
       :wrapper-col="{ span: 12 }"
-      style="text-align: left;"
+      style="font-family: 'Jua', sans-serif;text-align: left;"
     >
       <a-upload name="file" :multiple="true" action="//jsonplaceholder.typicode.com/posts/" :headers="headers" @change="handleChange">
-        <a-button>
+        <a-button style="font-family: 'Jua';" size="large">
           <a-icon type="upload" /> Click to Upload
         </a-button>
       </a-upload>
@@ -44,7 +48,7 @@
       label="ISBN Code"
       :label-col="{ span: 5 }"
       :wrapper-col="{ span: 12 }"
-      style="text-align: left;"
+      style="font-family: 'Jua', sans-serif;text-align: left;"
     >
       <a-Row :gutter="8">
         <a-Col :span="12">
@@ -54,11 +58,12 @@
             {rules: [{ required: true, message: 'Please input your ISBN Code!' }]}
             ]"
             placeholder="Type barcode or upload"
+            size="large"
           />
         </a-Col>
         <a-Col :span="12">
           <a-upload name="file" :multiple="true" action="//jsonplaceholder.typicode.com/posts/" :headers="headers" @change="handleChange">
-            <a-button type="primary" shape="circle" icon="upload" :size="size"/>
+            <a-button type="primary" shape="circle" icon="upload" size="large"/>
           </a-upload>
         </a-Col>
       </a-Row>     
@@ -67,12 +72,14 @@
       label="Note"
       :label-col="{ span: 5 }"
       :wrapper-col="{ span: 12 }"
+      style="font-family: 'Jua', sans-serif;"
     >
       <a-input
         v-decorator="[
           'Note'
         ]"
         placeholder="Type something to describe the book here"
+        size="large"
       />
     </a-form-item>   
     <a-form-item
@@ -81,6 +88,8 @@
       <a-button
         type="primary"
         html-type="submit"
+        style="font-family: 'Jua', sans-serif;"
+        size="large"
       >
         ADD
       </a-button>

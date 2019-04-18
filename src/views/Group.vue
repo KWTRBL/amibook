@@ -1,7 +1,7 @@
 <template>
-    <div style='margin-left: 20%; margin-right: 20%'>
-        <h1>Group</h1>
-        <h3 style="text-align: left">All groups in our community.</h3>
+    <div style='margin-left: 20%; margin-right: 20%;margin-top: 5vh'>
+        <p style="font-size:5vw ;margin-bottom:0.1vw;" >Group</p>
+        <p style="font-size:2vw ;margin-bottom:0.5vw;text-align: left">All groups in our community.</p>
         <Group/>
     </div>
 </template>

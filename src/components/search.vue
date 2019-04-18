@@ -7,11 +7,12 @@
                 placeholder="input search text"
                 @search="onSearch"
                 enterButton
+                size="large"
             />
         </a-col>
       <a-col :span="8"  >
           <a-upload name="file" :multiple="true" action="//jsonplaceholder.typicode.com/posts/" :headers="headers" @change="handleChange">
-            <a-button type="primary" shape="circle" icon="upload" :size="size"/>
+            <a-button type="primary" shape="circle" icon="upload" size="large"/>
           </a-upload>
         </a-col>
     </a-row>

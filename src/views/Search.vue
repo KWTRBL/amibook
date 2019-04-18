@@ -1,6 +1,6 @@
 <template>
-    <div style='margin-left: 20%; margin-right: 20%'>
-        <h1>SearchBook</h1>
+    <div style='margin-left: 20%; margin-right: 20%;margin-top: 18vw'>
+        <p style="font-size:5vw ;margin-bottom:0.5vw; ">SearchBook</p>
         <SC />
         
     </div>

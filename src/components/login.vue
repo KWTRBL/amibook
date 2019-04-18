@@ -15,6 +15,7 @@
           {rules: [{ required: true, message: 'Please input your username!' }]}
         ]"
         placeholder="Username"
+        size="large"
       >
         <a-icon
           slot="prefix"
@@ -27,6 +28,7 @@
     <a-form-item
       :validate-status="passwordError() ? 'error' : ''"
       :help="passwordError() || ''"
+      style="margin-top:0.5%;="
     >
       <a-input
         v-decorator="[
@@ -35,6 +37,7 @@
         ]"
         type="password"
         placeholder="Password"
+        size="large"
       >
         <a-icon
           slot="prefix"
@@ -44,12 +47,12 @@
       </a-input>
     </a-form-item>
     <br>
-    <a-form-item>
+    <a-form-item style="margin-top:0.5%">
       <a-button
         type="primary"
         html-type="submit"
         :disabled="hasErrors(form.getFieldsError())"
-        
+        size="large"
       >
         Log in
       </a-button>
@@ -60,6 +63,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
 function hasErrors (fieldsError) {
   return Object.keys(fieldsError).some(field => fieldsError[field]);
 }
@@ -92,6 +96,7 @@ export default {
     });
   },
   methods: {
+    ...mapMutations(['setWho']),
     // Only show error after a field is touched.
     userNameError () {
       const { getFieldError, isFieldTouched } = this.form;
@@ -119,8 +124,9 @@ export default {
                 type: 'success',
               }).then((result) => {
                 // console.log(document.getElementById('Home'))
-                document.querySelector('#Home a').click()
-                return this.$router.push({name: 'home'})
+                this.setWho(values['userName'])
+                document.querySelector('#Profile a').click()
+                return this.$router.push({name: 'profile'})
               })
             }
           }

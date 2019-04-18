@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h1>Login</h1>
+    <div style="margin-top: 35vh;">
+        <p style="font-size:5vw ;margin-bottom:0.5vw; ">Login</p>
         <!-- <a-button type="primary">Primary</a-button> -->
         <loginPanel />
         
@@ -14,6 +14,9 @@ export default {
         loginPanel
     }
 }
-</script>
+</script >
+<style scoped>
+
+</style>
 
 

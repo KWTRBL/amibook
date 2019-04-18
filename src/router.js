@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
-import About from '@/views/About.vue'
+import Profile from './views/Profile.vue'
 import Login from '@/views/Login.vue'
 import AddB from '@/views/AddB.vue'
 import Group from '@/views/Group.vue'
@@ -14,17 +13,12 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+      path: '/profile',
+      name: 'profile',
+      component: Profile
+    },
+    {
       path: '/',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/about',
-      name: 'about',
-      component: About 
-    },
-    {
-      path: '/login',
       name: 'login',
       component: Login
     },
