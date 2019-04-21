@@ -8,10 +8,11 @@
                 @search="onSearch"
                 enterButton
                 size="large"
+                v-model="code"
             />
         </a-col>
       <a-col :span="8"  >
-          <a-upload name="file" :multiple="true" action="//jsonplaceholder.typicode.com/posts/" :headers="headers" @change="handleChange">
+          <a-upload name="file" :multiple="true" action="http://localhost:3000/barcode" :headers="headers" @change="handleChange">
             <a-button type="primary" shape="circle" icon="upload" size="large"/>
           </a-upload>
         </a-col>
@@ -20,27 +21,49 @@
 </template>
 
 <script>
+import axios from 'axios'
+import { mapGetters } from 'vuex';
+import { mapMutations } from 'vuex';
 function getBase64 (img, callback) {
   const reader = new FileReader()
   reader.addEventListener('load', () => callback(reader.result))
   reader.readAsDataURL(img)
 }
 export default {
+  data(){
+    return{
+      code: null
+    }
+  },
+  computed: {
+    ...mapGetters(['getWho'])
+  },
   methods: {
+    ...mapMutations(['setListBook']),
     onSearch (value) {
       console.log(value)
+      var lst={code: value,id: this.getWho.id}
+          axios.post('http://localhost:3000/search',lst).then((res) => {
+            // console.log(res)
+            this.setListBook(res.data)
+            return this.$router.push({name: 'finishsearch'})
+          }).catch((err) => {
+            console.log('error')
+          })
     },
     handleChange (info) {
-      if (info.file.status === 'uploading') {
-        this.loading = true
-        return
+      if (info.file.status !== 'uploading') {
+        console.log(info.file, info.fileList);
       }
       if (info.file.status === 'done') {
-        // Get this url from response in real world.
-        getBase64(info.file.originFileObj, (imageUrl) => {
-          this.imageUrl = imageUrl
-          this.loading = false
-        })
+        console.log('--------------------------')
+        console.log(info.file)
+        this.code = info.file.response
+        var input = document.getElementById("input")
+        input.value = this.code
+        this.$message.success(`${info.file.name} file uploaded successfully`);
+      } else if (info.file.status === 'error') {
+        this.$message.error(`${info.file.name} file upload failed.`);
       }
     },
     beforeUpload (file) {
@@ -54,7 +77,11 @@ export default {
       }
       return isJPG && isLt2M
     },
+     updateValue(value) {
+      this.$emit('input', value)
+    }
   },
+
 }
 </script>
 <style>

@@ -6,26 +6,25 @@
       <a-menu
         theme="dark"
         mode="horizontal"
-        :style="{ lineHeight: '64 vh'}"
+        :style="{ lineHeight: '20 px'}"
       >
-        <a-menu-item style="text-align: left;" >
-          <img alt="Vue logo" 
-              src="https://image.flaticon.com/icons/png/512/1631/1631263.png"
-              style="width:5.5 vh; height:5.5vh"
-          >
-        </a-menu-item>
         <router-link to="/"></router-link>
         <a-menu-item key="profile" id='Profile' >
-          <router-link to="/profile" style="font-family: 'Jua', sans-serif;font-size:1.15vw">Profile</router-link>
+          <router-link to="/profile" style="font-family: 'Jua', sans-serif;font-size:25px">
+            <img alt="Vue logo" 
+                src="https://image.flaticon.com/icons/png/512/1631/1631263.png"
+                style="width:40px; height:40px"
+            >
+          </router-link>
         </a-menu-item>
         <a-menu-item key="addbook" id='AddBook'>
-          <router-link to="/addbook" style="font-family: 'Jua', sans-serif;font-size:1.15vw">AddBook</router-link> 
+          <router-link to="/addbook" style="font-family: 'Jua', sans-serif;font-size:25px">AddBook</router-link> 
         </a-menu-item>
         <a-menu-item key="group" id='Group'>
-          <router-link to="/group" style="font-family: 'Jua', sans-serif;font-size:1.15vw">Group</router-link> 
+          <router-link to="/group" style="font-family: 'Jua', sans-serif;font-size:25px">Group</router-link> 
         </a-menu-item>
         <a-menu-item key="search" id='Search'>
-          <router-link to="/search" style="font-family: 'Jua', sans-serif;font-size:1.15vw">Search</router-link> 
+          <router-link to="/search" style="font-family: 'Jua', sans-serif;font-size:25px">Search</router-link> 
         </a-menu-item>
       </a-menu>
     </a-layout-header>

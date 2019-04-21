@@ -1,26 +1,26 @@
 <template>
-    <div  style='margin-left: 8%;'>
+    <div  style='margin-left: 100px;'>
         <a-form
     :form="form"
     @submit="handleSubmit"
     style= ' justify-content: center;'
   >
     <a-form-item
-      label="Book Name"
+      label="Book Name:"
       :label-col="{ span: 5 }"
       :wrapper-col="{ span: 12 }"
       style="font-family: 'Jua', sans-serif;"
     >
       <a-input
         v-decorator="[
-          'Book Name',
+          'BookName',
           {rules: [{ required: true, message: 'Please input your Book Name!' }]}
         ]"
         size="large"
       />
     </a-form-item>
     <a-form-item
-      label="Author"
+      label="Author:"
       :label-col="{ span: 5 }"
       :wrapper-col="{ span: 12 }"
       style="font-family: 'Jua', sans-serif;"
@@ -38,14 +38,14 @@
       :wrapper-col="{ span: 12 }"
       style="font-family: 'Jua', sans-serif;text-align: left;"
     >
-      <a-upload name="file" :multiple="true" action="//jsonplaceholder.typicode.com/posts/" :headers="headers" @change="handleChange">
+      <a-upload name="file" :multiple="true" action="http://localhost:3000/fileupload" :headers="headers" @change="handleChange">
         <a-button style="font-family: 'Jua';" size="large">
           <a-icon type="upload" /> Click to Upload
         </a-button>
       </a-upload>
     </a-form-item>
     <a-form-item
-      label="ISBN Code"
+      label="Barcode Number:"
       :label-col="{ span: 5 }"
       :wrapper-col="{ span: 12 }"
       style="font-family: 'Jua', sans-serif;text-align: left;"
@@ -54,7 +54,7 @@
         <a-Col :span="12">
           <a-input
             v-decorator="[
-            'ISBN Code',
+            'getCode',
             {rules: [{ required: true, message: 'Please input your ISBN Code!' }]}
             ]"
             placeholder="Type barcode or upload"
@@ -62,7 +62,7 @@
           />
         </a-Col>
         <a-Col :span="12">
-          <a-upload name="file" :multiple="true" action="//jsonplaceholder.typicode.com/posts/" :headers="headers" @change="handleChange">
+          <a-upload name="file" :multiple="true" action="http://localhost:3000/barcode" :headers="headers" @change="handleChange2">
             <a-button type="primary" shape="circle" icon="upload" size="large"/>
           </a-upload>
         </a-Col>
@@ -95,10 +95,14 @@
       </a-button>
     </a-form-item>
   </a-form>
+  <!-- {{img}} -->
     </div>
 </template>
 
 <script>
+import axios from 'axios'
+import { mapGetters, mapMutations } from 'vuex';
+
 export default {
   data () {
     return {
@@ -106,29 +110,71 @@ export default {
       form: this.$form.createForm(this),
       headers: {
         authorization: 'authorization-text',
-      }
+      },
+      img: 123123,
+      code: null,
+      reset: null
     };
   },
+  watch: {
+    getCode (val) {
+      console.log('this.$store.state.username: ', val);
+      this.form.setFieldsValue({getCode: val});
+    },
+  },
+  computed: {
+    ...mapGetters(['getWho']),
+    getCode(){
+      return this.code
+    }
+    
+  },
   methods: {
+    ...mapMutations(['setCode']),
     handleSubmit (e) {
       e.preventDefault();
       this.form.validateFields((err, values) => {
         if (!err) {
           console.log('Received values of form: ', values);
+          values['id'] = this.getWho.id
+          values['img'] = this.img
+          axios.post('http://localhost:3000/save', values).then((res) => {
+            console.log('success')
+            this.$swal({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'success',
+            }).then((result) => {
+              this.code = null
+                })
+          }).catch((err) => {
+            console.log('error')
+          })
         }
       });
     },
-    handleSelectChange (value) {
-      console.log(value);
-      this.form.setFieldsValue({
-        note: `Hi, ${value === 'male' ? 'man' : 'lady'}!`,
-      });
-    },
     handleChange(info) {
+
       if (info.file.status !== 'uploading') {
         console.log(info.file, info.fileList);
       }
       if (info.file.status === 'done') {
+        console.log('--------------------------')
+        console.log(info.file)
+        this.img = info.file.response
+        this.$message.success(`${info.file.name} file uploaded successfully`);
+      } else if (info.file.status === 'error') {
+        this.$message.error(`${info.file.name} file upload failed.`);
+      }
+    },
+    handleChange2(info) {
+      if (info.file.status !== 'uploading') {
+        console.log(info.file, info.fileList);
+      }
+      if (info.file.status === 'done') {
+        console.log('--------------------------')
+        console.log(info.file)
+        this.code = info.file.response
         this.$message.success(`${info.file.name} file uploaded successfully`);
       } else if (info.file.status === 'error') {
         this.$message.error(`${info.file.name} file upload failed.`);

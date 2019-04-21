@@ -7,7 +7,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     who: null,
-    users_lst: null
+    users_lst: null,
+    lst_book: null,
+    code: 123
   },
   mutations: {
     changePage(state, selected){
@@ -16,16 +18,18 @@ export default new Vuex.Store({
     setWho(state, who){
       
       state.who = who
-      // console.log(state.who, who)
+      console.log(state.who, who)
     },
     setUsers(state, val){
-      val.forEach(el => {
-        if(el.id == state.who){
-          // console.log("eeee")
-          state.users_lst = el
-        }
-      });
+      state.users_lst = val
+        
       // state.users_lst = filter_
+    },
+    setListBook(state,val){
+      state.lst_book =val
+    },
+    setCode(state, val){
+      state.code = val
     }
   },
   getters: {
@@ -34,6 +38,15 @@ export default new Vuex.Store({
     },
     getWho(state){
       return state.who
+    },
+    getListUsers(state){
+      return state.users_lst
+    },
+    getListBook(state){
+      return state.lst_book
+    },
+    getCode(state){
+      return state.code
     }
   }
 })

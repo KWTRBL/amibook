@@ -1,10 +1,10 @@
 <template>
   <div >
-    <p style="font-size:2.5vw ;margin-bottom:0.5vw;">Name: {{msg['name']}}</p>
-    <p style="font-size:2.5vw ;margin-bottom:0.5vw;" >Phone: {{msg['phone']}}</p>
-    <p style="font-size:2.5vw ;margin-bottom:0.5vw;" >Line ID: {{msg['line']}}</p>
-    <p style="font-size:2.5vw ;margin-bottom:0.5vw;" >Number of books: {{msg['numb']}}</p>
-    <p style="font-size:2.5vw ;margin-bottom:0.5vw;" >Number of group: {{msg['numg']}}</p>
+    <p style="font-size:30px ;margin-bottom:0.5px;">Name: {{msg['name']}}</p>
+    <p style="font-size:30px ;margin-bottom:0.5px;" >Phone: {{msg['phone']}}</p>
+    <p style="font-size:30px ;margin-bottom:0.5px;" >Line ID: {{msg['line']}}</p>
+    <p style="font-size:30px ;margin-bottom:0.5px;" >Number of books: {{msg['numb']}}</p>
+    <p style="font-size:30px ;margin-bottom:0.5px;" >Number of group: {{msg['numg']}}</p>
     <!-- {{msg}} -->
   </div>
 </template>

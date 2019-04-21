@@ -63,7 +63,7 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
+import { mapMutations, mapGetters } from 'vuex';
 function hasErrors (fieldsError) {
   return Object.keys(fieldsError).some(field => fieldsError[field]);
 }
@@ -73,21 +73,10 @@ export default {
       hasErrors,
       form: this.$form.createForm(this),
       correct: false,
-      users: [
-          {
-              id: "nut",
-              pass: 12345
-          },
-          {
-              id: "kaew",
-              pass: 67890
-          },
-          {
-              id: "babe",
-              pass: 24680
-          }
-      ],
     };
+  },
+  computed: {
+    ...mapGetters(['getListUsers'])
   },
   mounted () {
     this.$nextTick(() => {
@@ -113,9 +102,13 @@ export default {
         if (!err) {
           console.log('Received values of form: ', values);
           // console.log(this.users.length)
-          for(var i=0; i<this.users.length; i++){
+          let users = this.getListUsers
+          // console.log('123123123123')
+          // console.log(users)
+          for(var i=0; i<users.length; i++){
             // console.log(values['userName'])
-            if(this.users[i]['id'] == values['userName'] && this.users[i]['pass'] == values['password']){
+            if(users[i]['id'] == values['userName'] && users[i]['pass'] == values['password']){
+              let user = users[i]
               this.correct = true
               // console.log("yes")
               this.$swal({
@@ -124,7 +117,8 @@ export default {
                 type: 'success',
               }).then((result) => {
                 // console.log(document.getElementById('Home'))
-                this.setWho(values['userName'])
+                // console.log(user)
+                this.setWho(user)
                 // document.querySelector('#Profile a').click()
                 return this.$router.push({name: 'profile'})
               })

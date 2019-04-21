@@ -6,6 +6,7 @@ import AddB from '@/views/AddB.vue'
 import Group from '@/views/Group.vue'
 import Search from '@/views/Search.vue'
 import Main from '@/views/main.vue'
+import FinishSearch from '@/views/NextSearch.vue'
 
 Vue.use(Router)
 
@@ -38,6 +39,11 @@ export default new Router({
           path: '/search',
           name: 'search',
           component: Search
+        },
+        {
+          path: '/finishsearch',
+          name: 'finishsearch',
+          component: FinishSearch
         },
       ]
     },

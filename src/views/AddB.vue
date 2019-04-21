@@ -1,6 +1,6 @@
 <template>
-    <div style='margin-left: 20%; margin-right: 20%;margin-top: 27vh'>
-        <p style="font-size:5vw ;margin-bottom:0.5vw;">ADD BOOK</p>
+    <div style='margin-left: 120px ; margin-right: 120px;margin-top: 120px'>
+        <p style="font-size:60px ;margin-bottom:0.5px;">ADD BOOK</p>
         <AddB />
     </div>
 </template>
