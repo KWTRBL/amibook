@@ -10,17 +10,14 @@
         <a-list-item slot="renderItem" slot-scope="item" key="item['BookName']">
         <template slot="actions" >
         </template>
-        <img v-if="item.img != None" slot="extra" width="272" height="300" alt="logo" :src= "'data:image/jpeg;base64,'+item.img" />
+        <img v-if="item.img != Null " slot="extra" width="272" height="300" alt="logo" :src= "'data:image/jpeg;base64,'+item.img" />
         <!-- {{item.img}} -->
           <p style="font-size:30px ;">Book Name: {{item['BookName']}}</p>
           <p style="font-size:30px ;">from user: {{item.id}}</p>
           <a-avatar slot="avatar" src="https://img.icons8.com/bubbles/50/000000/book.png" />
           <p style="font-size:30px ;" v-if="item.Author != None" > Author: {{item.Author}}</p>
           <p style="font-size:30px ;" v-else > Author: - </p>
-          <p style="font-size:25px ;"  v-if="item.id != getWho.id"> Group: {{item.group}} </p>
-          <p style="font-size:25px ;"  v-els> It's Your Book!</p>
           <p style="font-size:20px ;" v-if="item.Note != None" >Note: {{item.Note}}</p>
-          <a-button type="primary"  v-on:click="contact(item.id)" >See Contact</a-button>
         </a-list-item>
   </a-list>
 </template>
@@ -42,7 +39,6 @@ export default {
   },
   computed: {
     ...mapGetters(['getListBook']),
-    ...mapGetters(['getWho'])
   },
   methods:{
     contact(val){

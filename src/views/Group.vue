@@ -5,12 +5,15 @@
         <Group/>
     </div>
 </template>
+
 <script>
+
 import Group from "@/components/GroupCard.vue"
 export default {
+
     components: {
         Group
-    }
+    },
     
 }
 </script>

@@ -36,7 +36,8 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['getWho'])
+    ...mapGetters(['getWho']),
+    ...mapGetters(['getListBook'])
   },
   methods: {
     ...mapMutations(['setListBook']),
@@ -44,7 +45,7 @@ export default {
       console.log(value)
       var lst={code: value,id: this.getWho.id}
           axios.post('http://localhost:3000/search',lst).then((res) => {
-            // console.log(res)
+            // console.log(res.data[1].group)
             this.setListBook(res.data)
             return this.$router.push({name: 'finishsearch'})
           }).catch((err) => {

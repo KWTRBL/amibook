@@ -1,5 +1,5 @@
 <template>
-  <div class="home" style="margin-left: 20%; margin-right: 20%;margin-top: 120px" >
+  <div class="home" style="margin-left: 20%; margin-right: 20%;margin-top: 100px" >
     <img alt="Vue logo" 
     src="https://image.flaticon.com/icons/png/512/1631/1631263.png"
     style="width:130px; height:130px"

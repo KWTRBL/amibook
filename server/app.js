@@ -45,7 +45,7 @@ app.post('/barcode', function(req, res) {
   var fstream;
   req.pipe(req.busboy);
   req.busboy.on('file', function (fieldname, file, filename) {
-      // console.log("Uploading: " + filename); 
+       console.log("Uploading: " + filename); 
       fstream = fs.createWriteStream(__dirname + '/files/' + 'code.jpg');
       file.pipe(fstream);
       fstream.on('close', function () {
@@ -113,21 +113,41 @@ app.post('/search',(req,res) => {
         var dbo = db.db("amibook");
         dbo.collection("book").find({}).toArray(function(err, result) {
           if (err) throw err;
-        console.log('getUser')
-        // console.log(req.body)
-        lst=[]
-        for(var i=0; i<result.length; i++){
-            if(result[i]['getCode'] == req.body.code ){
-              // console.log(result[i])
-              lst.push(result[i])
-              console.log(lst)
-            }
-        }
-        res.send(lst)
+          dbo.collection("group").find({}).toArray(function(err, result2) {
+            if (err) throw err;
+              // console.log(result)
+              // console.log(result2)
+              var list = []
+              var book = result.filter(x => x.getCode === req.body.code)
+              if(book.length > 0){
+                var mygroup = result2.filter(x => x.id === req.body.id)
+                for(var i=0; i<book.length; i++){
+                    var bookgroup = result2.filter(x => x.id === book[i].id)
+                    var check = false
+                    for(var j=0; j<mygroup.length;j++){
+                      for(var k=0; k<bookgroup.length;k++){
+                        if(mygroup[j].group==bookgroup[k].group){
+                          book[i].group = mygroup[j].group
+                          check = true
+                          break
+                        }
+                      }
+                    }
+                    if(check == true){
+                      list.push(book[i])
+                    }
+                }
+              }
+              console.log(".................")
+              console.log(list)
+            res.send(list)
+            db.close();
+          });
         db.close();
         });
     });
-}),
+})
+
 app.post('/contact',(req,res) => {
   console.log(req.body)
   MongoClient.connect(url, function(err, db) {
@@ -150,5 +170,76 @@ app.post('/contact',(req,res) => {
   });
 })
 
+app.post('/addg',(req,res) => {
+  console.log(req.body)
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("amibook");
+    dbo.collection("group").insertOne(req.body, function(err, res) {
+      if (err) throw err;
+      console.log("1 document inserted");
+      db.close();
+    });
+  });
+res.send('ok')
+})
+
+app.post('/getg',(req,res) => {
+  console.log(req.body.id)
+  MongoClient.connect(url, function(err, db) {
+      if (err) throw err;
+      var dbo = db.db("amibook");
+      dbo.collection("group").find({}).toArray(function(err, result) {
+        if (err) throw err;
+      console.log(result[0])
+      lst=[]
+      for(var i=0; i<result.length; i++){
+          if(result[i]['id'] == req.body.id){
+            // console.log(result[i])
+            lst.push(result[i])
+            console.log(lst)
+          }
+      }
+      res.send(lst)
+      db.close();
+      });
+  });
+})
+
+app.post('/removeg',(req,res) => {
+  console.log(req.body.id)
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("amibook");
+    var myquery = { id:req.body.id, group:req.body.group };
+    dbo.collection("group").deleteOne(myquery, function(err, obj) {
+      if (err) throw err;
+      console.log("1 document deleted");
+      db.close();
+    });
+  }); 
+});
+
+app.post('/yourbook',(req,res) => {
+  console.log(req.body.id)
+  MongoClient.connect(url, function(err, db) {
+      if (err) throw err;
+      var dbo = db.db("amibook");
+      dbo.collection("book").find({}).toArray(function(err, result) {
+          if (err) throw err;  
+        // console.log(req.body)
+        lst=[]
+        for(var i=0; i<result.length; i++){
+            if(result[i]['id'] == req.body.id){
+              // console.log(result[i])
+              lst.push(result[i])
+              console.log(lst)
+            }
+        }
+        res.send(lst)
+        db.close();
+      });
+  });
+})
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

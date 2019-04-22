@@ -111,9 +111,10 @@ export default {
       headers: {
         authorization: 'authorization-text',
       },
-      img: 123123,
+      img: null,
       code: null,
-      reset: null
+      reset: null,
+      // BookName: null
     };
   },
   watch: {
@@ -138,6 +139,7 @@ export default {
           console.log('Received values of form: ', values);
           values['id'] = this.getWho.id
           values['img'] = this.img
+          // console(values)
           axios.post('http://localhost:3000/save', values).then((res) => {
             console.log('success')
             this.$swal({

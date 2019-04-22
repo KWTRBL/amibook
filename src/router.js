@@ -7,6 +7,7 @@ import Group from '@/views/Group.vue'
 import Search from '@/views/Search.vue'
 import Main from '@/views/main.vue'
 import FinishSearch from '@/views/NextSearch.vue'
+import YourBook from '@/views/Library.vue'
 
 Vue.use(Router)
 
@@ -44,6 +45,11 @@ export default new Router({
           path: '/finishsearch',
           name: 'finishsearch',
           component: FinishSearch
+        },
+        {
+          path: '/yourbook',
+          name: 'yourbook',
+          component: YourBook
         },
       ]
     },
