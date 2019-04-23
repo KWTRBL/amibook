@@ -118,6 +118,13 @@ app.post('/search',(req,res) => {
               // console.log(result)
               // console.log(result2)
               var list = []
+              for(var i=0; i<result.length; i++){
+                if(result[i]['getCode'] == req.body.code && result[i]['id'] == req.body.id){
+                  console.log(result[i])
+                  list.push(result[i])
+                  console.log(list)
+                }
+              }
               var book = result.filter(x => x.getCode === req.body.code)
               if(book.length > 0){
                 var mygroup = result2.filter(x => x.id === req.body.id)
@@ -126,7 +133,7 @@ app.post('/search',(req,res) => {
                     var check = false
                     for(var j=0; j<mygroup.length;j++){
                       for(var k=0; k<bookgroup.length;k++){
-                        if(mygroup[j].group==bookgroup[k].group){
+                        if(mygroup[j].group==bookgroup[k].group && bookgroup[k].id!= req.body.id){
                           book[i].group = mygroup[j].group
                           check = true
                           break

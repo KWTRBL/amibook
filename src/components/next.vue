@@ -17,10 +17,9 @@
           <a-avatar slot="avatar" src="https://img.icons8.com/bubbles/50/000000/book.png" />
           <p style="font-size:30px ;" v-if="item.Author != None" > Author: {{item.Author}}</p>
           <p style="font-size:30px ;" v-else > Author: - </p>
-          <p style="font-size:25px ;"  v-if="item.id != getWho.id"> Group: {{item.group}} </p>
-          <p style="font-size:25px ;"  v-els> It's Your Book!</p>
+          <p style="font-size:25px ;"  v-if="item.id == getWho.id"> It's Your Book! </p>
           <p style="font-size:20px ;" v-if="item.Note != None" >Note: {{item.Note}}</p>
-          <a-button type="primary"  v-on:click="contact(item.id)" >See Contact</a-button>
+          <a-button type="primary" v-if="item.id != getWho.id" v-on:click="contact(item.id)" >See Contact</a-button>
         </a-list-item>
   </a-list>
 </template>
