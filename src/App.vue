@@ -18,17 +18,15 @@ export default {
 
 <style>
 #app {
-  font-family: 'Jua', sans-serif !IMPORTANT;
+  font-family: 'Lobster', cursive !IMPORTANT;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   height: 100%;
   background-position:center;
-  background-image: url(https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)  ;
   
 }
-
 
 #nav {
   padding: 30px;

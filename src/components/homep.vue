@@ -1,10 +1,10 @@
 <template>
-  <div >
-    <p style="font-size:30px ;margin-bottom:0.5px;">Name: {{msg['name']}}</p>
-    <p style="font-size:30px ;margin-bottom:0.5px;" >Phone: {{msg['phone']}}</p>
-    <p style="font-size:30px ;margin-bottom:0.5px;" >Line ID: {{msg['line']}}</p>
-    <p style="font-size:30px ;margin-bottom:0.5px;" >Number of books: {{getListBook.length}}</p>
-    <p style="font-size:30px ;margin-bottom:0.5px;" >Number of group: {{allgroup.length}}</p>
+  <div style="margin-top:160px ;margin-left:600px;">
+    <p style="font-size:40px ;margin-bottom:0.5px;">Name: {{msg['name']}}</p>
+    <p style="font-size:40px ;margin-bottom:0.5px;" >Phone: {{msg['phone']}}</p>
+    <p style="font-size:40px ;margin-bottom:0.5px;" >Line ID: {{msg['line']}}</p>
+    <p style="font-size:40px ;margin-bottom:0.5px;" >Number of books: {{getListBook.length}}</p>
+    <p style="font-size:40px ;margin-bottom:0.5px;" >Number of group: {{allgroup.length}}</p>
     <a-button type="primary"  v-on:click="book()" >See All Of Your Book</a-button>
     <!-- {{msg}} -->
   </div>

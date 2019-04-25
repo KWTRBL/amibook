@@ -1,6 +1,6 @@
 <template>
-    <div style='margin-left: 20%; margin-right: 20%;margin-top: 50px'>
-        <p style="font-size: 60px ;margin-bottom:0.5px; ">YourBook</p>
+    <div style=" height: 100%;background-position:center;background-image: url(https://scontent.fbkk2-6.fna.fbcdn.net/v/t1.15752-9/57909013_830004894031022_2595741958685065216_n.png?_nc_cat=107&_nc_ht=scontent.fbkk2-6.fna&oh=81687a3eff10dba1eeefc915b25d335f&oe=5D354E62)  ; ">
+        <br>
         <Lib/>
         
     </div>

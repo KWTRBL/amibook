@@ -1,6 +1,6 @@
 <template>
-    <div style='margin-left: 20%; margin-right: 20%;margin-top: 240px'>
-        <p style="font-size: 60px ;margin-bottom:0.5px; ">Search From Book's Barcode</p>
+    <div style=" height: 100%;background-position:center;background-image: url(https://scontent.fbkk2-7.fna.fbcdn.net/v/t1.15752-9/58378388_451426832267432_5038412494121467904_n.png?_nc_cat=106&_nc_ht=scontent.fbkk2-7.fna&oh=d388558311bdbc585cfaa3305992ff06&oe=5D2C8627)  ; " >
+        <br>
         <SC />
         
     </div>

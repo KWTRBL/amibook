@@ -1,16 +1,16 @@
 <template>
-  <div class="home" style="margin-left: 20%; margin-right: 20%;margin-top: 100px" >
-    <img alt="Vue logo" 
-    src="https://image.flaticon.com/icons/png/512/1631/1631263.png"
-    style="width:130px; height:130px"
-    >
-    <br>
-    <br>
-      <p style="font-size:60px ;margin-bottom:0.5px;">Profile</p>
-      <HelloWorld v-bind:msg="getWho"/>
-      <!-- {{getWho}} -->
-      <!-- <Card></Card> -->
-      <!-- {{getWho}} -->
+  <div style=" height: 100%;background-position:center;background-image: url(https://scontent.fbkk2-5.fna.fbcdn.net/v/t1.15752-9/57852350_981889328680554_8562290726489030656_n.png?_nc_cat=110&_nc_ht=scontent.fbkk2-5.fna&oh=9616fc7dbb57c331d6610a469bfb8bba&oe=5D398E04)  ; ">
+    <div class="home"  >
+      <!-- <img alt="Vue logo" 
+      src="https://image.flaticon.com/icons/png/512/1631/1631263.png"
+      style="width:130px; height:130px"
+      > -->
+      <br>
+        <HelloWorld v-bind:msg="getWho"/>
+        <!-- {{getWho}} -->
+        <!-- <Card></Card> -->
+        <!-- {{getWho}} -->
+    </div>
   </div>
 </template>
 

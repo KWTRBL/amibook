@@ -4,22 +4,26 @@
     size="large"
     :pagination="pagination"
     :dataSource="getListBook"
-    style="font-family: 'Jua', sans-serif;text-align:left;"
+    style="font-family: 'Jua', sans-serif;padding:20px;margin-top:80px;margin-left:180px;"
   >
       <div>{{msg}}</div>
         <a-list-item slot="renderItem" slot-scope="item" key="item['BookName']">
-        <template slot="actions" >
-        </template>
-        <img v-if="item.img != None" slot="extra" width="272" height="300" alt="logo" :src= "'data:image/jpeg;base64,'+item.img" />
+          <a-Row :gutter="0">
+            <a-Col :span="12">
+              <p style="font-size:30px ;">Book Name: {{item['BookName']}}</p>
+            <p style="font-size:30px ;">from user: {{item.id}}</p>
+            <p style="font-size:30px ;" v-if="item.Author != None" > Author: {{item.Author}}</p>
+            <p style="font-size:30px ;" v-else > Author: - </p>
+            <p style="font-size:25px ;"  v-if="item.id == getWho.id"> It's Your Book! </p>
+            <p style="font-size:20px ;" v-if="item.Note != None" >Note: {{item.Note}}</p>
+            <a-button type="primary" v-if="item.id != getWho.id" v-on:click="contact(item.id)" >See Contact</a-button>
+            </a-Col>
+            <a-Col :span="12">
+            <img v-if="item.img != None"  width="272" height="300"  :src= "'data:image/jpeg;base64,'+item.img" />
+            </a-Col>
+          </a-Row>  
+        
         <!-- {{item.img}} -->
-          <p style="font-size:30px ;">Book Name: {{item['BookName']}}</p>
-          <p style="font-size:30px ;">from user: {{item.id}}</p>
-          <a-avatar slot="avatar" src="https://img.icons8.com/bubbles/50/000000/book.png" />
-          <p style="font-size:30px ;" v-if="item.Author != None" > Author: {{item.Author}}</p>
-          <p style="font-size:30px ;" v-else > Author: - </p>
-          <p style="font-size:25px ;"  v-if="item.id == getWho.id"> It's Your Book! </p>
-          <p style="font-size:20px ;" v-if="item.Note != None" >Note: {{item.Note}}</p>
-          <a-button type="primary" v-if="item.id != getWho.id" v-on:click="contact(item.id)" >See Contact</a-button>
         </a-list-item>
   </a-list>
 </template>
@@ -30,12 +34,11 @@ import { mapGetters} from 'vuex';
 export default {
   data () {
     return {
-      listData,
       pagination: {
         onChange: (page) => {
           console.log(page);
         },
-        pageSize: 3,
+        pageSize: 1,
       },
     }
   },

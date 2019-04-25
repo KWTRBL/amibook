@@ -1,6 +1,6 @@
 <template>
-    <div style='margin-left: 120px ; margin-right: 120px;margin-top: 120px'>
-        <p style="font-size:60px ;margin-bottom:0.5px;">ADD BOOK</p>
+    <div style=" height: 100%;background-position:center;background-image: url(https://scontent.fbkk2-6.fna.fbcdn.net/v/t1.15752-9/57908961_2110512182398556_234618262195798016_n.png?_nc_cat=111&_nc_ht=scontent.fbkk2-6.fna&oh=fa19133c640ae6ae19f19acde4a1f709&oe=5D351C75)  ; ">
+        <br>
         <AddB />
     </div>
 </template>

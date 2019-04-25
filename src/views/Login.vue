@@ -1,10 +1,10 @@
 <template>
-    <div style="margin-top: 35vh;">
-        <p style="font-size:60px ;margin-bottom:0.5vh; ">Login</p>
-        <!-- <a-button type="primary">Primary</a-button> -->
-        <loginPanel />
-        
-    </div>
+        <div id="login" style="  height: 100%;background-position:center;background-image: url(https://scontent.fbkk2-6.fna.fbcdn.net/v/t1.15752-9/58790261_419524932210467_7517835296637976576_n.png?_nc_cat=111&_nc_ht=scontent.fbkk2-6.fna&oh=454c9c22111642f4554d85c2169add6a&oe=5D7240DB)  ; ">
+            <br>
+            <!-- <a-button type="primary">Primary</a-button> -->
+            <loginPanel />
+            
+        </div>
 </template>
 
 <script>
@@ -28,7 +28,7 @@ export default {
   },
 }
 </script >
-<style scoped>
+<style >
 
 </style>
 

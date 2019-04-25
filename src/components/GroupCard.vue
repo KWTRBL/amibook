@@ -1,9 +1,9 @@
 <template>
-  <div style="background-color: #7777773d; padding: 20px;">
-    <a-row :gutter="16" >
-      <a-col :span="8">
-        <a-card title="Grop1" :bordered=false
-        style="font-family: 'Jua', sans-serif;margin-left: 5%;margin-right: 5%;margin-top:2%;"
+  <div style="margin-top:210px;margin-left:240px">
+    <a-row :gutter="1">
+      <a-col :span="4">
+        <a-card title="Group1" :bordered=false
+        style="font-family: 'Jua', sans-serif;margin-left: 10%;margin-right: 10%;margin-top:2%;"
         >
             <img
               alt="example"
@@ -11,13 +11,13 @@
               slot="cover"
               style="height:150px"
             />
-             <a-button v-if="join1"  v-on:click="join1 = !join1;add(g1)" style="margin-top: 4%;" type="primary" size="large">Join</a-button>
-             <a-button v-else v-on:click="join1 = !join1;remove(g1)" style="margin-top: 4%;" type="danger " size="large">Leave</a-button >
+             <a-button v-if="join1"  v-on:click="join1 = !join1;add(g1)" style="margin-top: 4%;" type="primary" size="medium">  Join  </a-button>
+             <a-button v-else v-on:click="join1 = !join1;remove(g1)" style="margin-top: 4%;" type="danger " size="medium">Leave</a-button >
         </a-card>
       </a-col>
-      <a-col :span="8">
-        <a-card title="Grop2" :bordered=false
-        style="font-family: 'Jua', sans-serif;margin-left: 5%;margin-right: 5%;margin-top:2%;"
+      <a-col :span="4">
+        <a-card title="Group2" :bordered=false
+        style="font-family: 'Jua', sans-serif;margin-left: 10%;margin-right: 10%;margin-top:2%;"
         >
             <img
               alt="example"
@@ -25,13 +25,13 @@
               slot="cover"
               style="height:150px"
             />
-             <a-button v-if="join2"  v-on:click="join2 = !join2;add(g2)" style="margin-top: 4%;" type="primary" size="large">Join</a-button>
-             <a-button v-else v-on:click="join2 = !join2;remove(g2)" style="margin-top: 4%;" type="danger " size="large">Leave</a-button >
+             <a-button v-if="join2"  v-on:click="join2 = !join2;add(g2)" style="margin-top: 4%;" type="primary" size="medium">  Join  </a-button>
+             <a-button v-else v-on:click="join2 = !join2;remove(g2)" style="margin-top: 4%;" type="danger " size="medium">Leave</a-button >
         </a-card>
       </a-col>
-      <a-col :span="8">
-        <a-card title="Grop3" :bordered=false
-        style="font-family: 'Jua', sans-serif;margin-left: 5%;margin-right: 5%;margin-top:2%;"
+      <a-col :span="4">
+        <a-card title="Group3" :bordered=false
+        style="font-family: 'Jua', sans-serif;margin-left: 10%;margin-right: 10%;margin-top:2%;"
         >
             <img
               alt="example"
@@ -39,16 +39,13 @@
               slot="cover"
               style="height:150px"
             />
-             <a-button v-if="join3"  v-on:click="join3 = !join3;add(g3)" style="margin-top: 4%;" type="primary" size="large">Join</a-button>
-             <a-button v-else v-on:click="join3 = !join3;remove(g3)" style="margin-top: 4%;" type="danger " size="large">Leave</a-button >
+             <a-button v-if="join3"  v-on:click="join3 = !join3;add(g3)" style="margin-top: 4%;" type="primary" size="medium">  Join  </a-button>
+             <a-button v-else v-on:click="join3 = !join3;remove(g3)" style="margin-top: 4%;" type="danger " size="medium">Leave</a-button >
         </a-card>  
       </a-col>
-    </a-row>
-    <br>
-    <a-row :gutter="16"  >
-      <a-col :span="8">
-        <a-card title="Grop4" :bordered=false
-        style="font-family: 'Jua', sans-serif;margin-left: 5%;margin-right: 5%;margin-top:2%;"
+      <a-col :span="4">
+        <a-card title="Group4" :bordered=false
+        style="font-family: 'Jua', sans-serif;margin-left: 10%;margin-right: 10%;margin-top:2%;"
         >
             <img
               alt="example"
@@ -56,13 +53,13 @@
               slot="cover"
               style="height:150px"
             />
-             <a-button v-if="join4"  v-on:click="join4 = !join4;add(g4)" style="margin-top: 4%;" type="primary" size="large">Join</a-button>
-             <a-button v-else v-on:click="join4 = !join4;remove(g4)" style="margin-top: 4%;" type="danger " size="large">Leave</a-button >
+             <a-button v-if="join4"  v-on:click="join4 = !join4;add(g4)" style="margin-top: 4%;" type="primary" size="medium">  Join  </a-button>
+             <a-button v-else v-on:click="join4 = !join4;remove(g4)" style="margin-top: 4%;" type="danger " size="medium">Leave</a-button >
         </a-card>
       </a-col>
-      <a-col :span="8">
-        <a-card title="Grop5" :bordered=false
-        style="font-family: 'Jua', sans-serif;margin-left: 5%;margin-right: 5%;margin-top:2%;"
+      <a-col :span="4">
+        <a-card title="Group5" :bordered=false
+        style="font-family: 'Jua', sans-serif;margin-left: 10%;margin-right: 10%;margin-top:2%;"
         >
             <img
               alt="example"
@@ -70,8 +67,8 @@
               slot="cover"
               style="height:150px"
             />
-             <a-button v-if="join5"  v-on:click="join5 = !join5;add(g5)" style="margin-top: 4%;" type="primary" size="large">Join</a-button>
-             <a-button v-else v-on:click="join5 = !join5;remove(g5)" style="margin-top: 4%;" type="danger " size="large">Leave</a-button >
+             <a-button v-if="join5"  v-on:click="join5 = !join5;add(g5)" style="margin-top: 4%;" type="primary" size="medium">  Join  </a-button>
+             <a-button v-else v-on:click="join5 = !join5;remove(g5)" style="margin-top: 4%;" type="danger " size="medium">Leave</a-button >
         </a-card>
       </a-col>
     </a-row>

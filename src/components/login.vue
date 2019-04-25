@@ -1,9 +1,16 @@
 <template>
 <a-layout-content>
+  <!-- <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br> -->
   <a-form
     layout="inline"
     :form="form"
     @submit="handleSubmit"
+    style="margin-left: 650px;margin-top:280px "
   >
     <a-form-item
       :validate-status="userNameError() ? 'error' : ''"

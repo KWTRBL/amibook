@@ -1,5 +1,5 @@
 <template>
-    <div  style='margin-left: 100px;'>
+    <div  style='margin-top:200px;margin-left: 600px;'>
         <a-form
     :form="form"
     @submit="handleSubmit"
@@ -147,7 +147,6 @@ export default {
                 text: "You won't be able to revert this!",
                 type: 'success',
             }).then((result) => {
-              this.code = null
                 })
           }).catch((err) => {
             console.log('error')
