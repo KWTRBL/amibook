@@ -5,7 +5,7 @@ const cors = require('cors')
 const javascriptBarcodeReader = require('javascript-barcode-reader')
 var bodyParser = require('body-parser')
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://database:27017/book";
+var url = "mongodb://localhost:27017/book";
 
 app.use(cors())
 app.use(bodyParser.json({limit: '50mb'}))
