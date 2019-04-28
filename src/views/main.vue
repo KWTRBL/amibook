@@ -12,7 +12,7 @@
         <a-menu-item key="profile" id='Profile' >
           <router-link to="/profile" style="font-family: 'Jua', sans-serif;font-size:25px">
             <img alt="Vue logo" 
-                src="https://image.flaticon.com/icons/png/512/1631/1631263.png"
+                src="https://iconutopia.com/wp-content/uploads/2016/06/book-269x300.png"
                 style="width:40px; height:40px"
             >
           </router-link>

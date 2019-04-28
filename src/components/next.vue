@@ -4,7 +4,7 @@
     size="large"
     :pagination="pagination"
     :dataSource="getListBook"
-    style="font-family: 'Jua', sans-serif;padding:20px;margin-top:80px;margin-left:180px;"
+    style="font-family: 'Jua', sans-serif;padding:20px;margin-top:80px;margin-left:200px;"
   >
       <div>{{msg}}</div>
         <a-list-item slot="renderItem" slot-scope="item" key="item['BookName']">

@@ -1,5 +1,5 @@
 <template>
-    <div  style='margin-top:200px;margin-left: 600px;'>
+    <div  style='margin-top:185px;margin-left: 600px;'>
         <a-form
     :form="form"
     @submit="handleSubmit"
@@ -113,7 +113,9 @@ export default {
       },
       img: null,
       code: null,
-      reset: null,
+      book: null,
+      name: null,
+      note: null
       // BookName: null
     };
   },
@@ -122,11 +124,29 @@ export default {
       console.log('this.$store.state.username: ', val);
       this.form.setFieldsValue({getCode: val});
     },
+    BookName (val){
+      this.form.setFieldsValue({BookName: val});
+    },
+    Author (val){
+      this.form.setFieldsValue({Author: val});
+    },
+    Note (val){
+      this.form.setFieldsValue({Note: val});
+    }
   },
   computed: {
     ...mapGetters(['getWho']),
     getCode(){
       return this.code
+    },
+    BookName(){
+      return this.book
+    },
+    Author(){
+      return this.name
+    },
+    Note(){
+      return this.note
     }
     
   },
@@ -147,6 +167,11 @@ export default {
                 text: "You won't be able to revert this!",
                 type: 'success',
             }).then((result) => {
+              this.code =""
+              this.book =""
+              this.name =""
+              this.note =""
+              this.img = null
                 })
           }).catch((err) => {
             console.log('error')

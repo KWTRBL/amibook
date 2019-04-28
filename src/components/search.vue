@@ -1,6 +1,5 @@
 <template>
   <div style='margin-left:20%;margin-top:180px'>
-    
     <a-row :gutter="8" style="text-align: left;">
       <a-col :span="16">
             <a-input-search

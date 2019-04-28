@@ -7,7 +7,7 @@
         >
             <img
               alt="example"
-              src="https://pbs.twimg.com/media/DCM0hY6UAAAbWEJ.jpg"
+              src="https://i2.wp.com/www.casualoptimist.com/wp-content/uploads/2018/12/tess-of-the-road-cover-art-simon-prades.jpg?resize=620%2C959"
               slot="cover"
               style="height:150px"
             />
@@ -21,7 +21,7 @@
         >
             <img
               alt="example"
-              src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+              src="https://i1.wp.com/www.casualoptimist.com/wp-content/uploads/2019/03/bird-king-design-helen-crawford-white.jpg?resize=620%2C919"
               slot="cover"
               style="height:150px"
             />
@@ -35,7 +35,7 @@
         >
             <img
               alt="example"
-              src="https://pbs.twimg.com/media/DkVazE9V4AAw1FI.jpg"
+              src="https://i.pinimg.com/originals/b9/0d/56/b90d56623e94c6f8293ac7ae1f401b4d.png"
               slot="cover"
               style="height:150px"
             />
@@ -49,7 +49,7 @@
         >
             <img
               alt="example"
-              src="https://pbs.twimg.com/media/DdFgex5VwAAsQi3.jpg"
+              src="http://nexitcourier.com/wp-content/uploads/book-cover-art-book-cover-design-ideas-layout-fonts-and-how-to-create-one-1.jpg"
               slot="cover"
               style="height:150px"
             />
@@ -63,7 +63,7 @@
         >
             <img
               alt="example"
-              src="https://pbs.twimg.com/media/DCM0hY6UAAAbWEJ.jpg"
+              src="https://i.pinimg.com/originals/87/47/99/8747993570a2acf91a2c3f95ea7763e0.jpg"
               slot="cover"
               style="height:150px"
             />
