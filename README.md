@@ -1,29 +1,9 @@
-# amibook
+# Amibook
 
-## Project setup
-```
-npm install
-```
+### setup
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+```sh
+docker-compose build
 
-### Compiles and minifies for production
+docker-compose up
 ```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

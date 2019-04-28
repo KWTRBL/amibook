@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "serve": "nodemon app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-busboy": "^0.0.2",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "fs": "^0.0.1-security",
+    "javascript-barcode-reader": "^0.4.12",
+    "mongodb": "^3.2.3",
+    "nodemon": "^1.18.11"
+  }
+}
