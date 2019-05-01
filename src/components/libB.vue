@@ -4,7 +4,7 @@
     itemLayout="vertical"
     size="large"
     :pagination="pagination"
-    :dataSource="getListBook"
+    :dataSource="getBookUser"
     style="font-family: 'Jua', sans-serif;padding:20px;margin-top:160px;margin-left:280px;"
   >
         <a-list-item slot="renderItem" slot-scope="item" key="item['BookName']">
@@ -40,27 +40,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['getListBook']),
-  },
-  methods:{
-    contact(val){
-      // console.log(val)
-      var value = []
-      value.push(val)
-      // console.log(value)
-      axios.post('http://localhost:3000/contact',value).then((res) => {
-            // console.log(res.data)
-              this.$swal({
-                title: "Name:" + res.data[0]['name'],
-                text: "Phone:"+ res.data[0]['phone'] + "   " + "Line:" + res.data[0]['line'] ,
-                type: 'success',
-              }).then((result) => {
-              })
-          }).catch((err) => {
-            console.log('error')
-          })
-
-    }
+    ...mapGetters(['getBookUser']),
   }
 }
 </script>

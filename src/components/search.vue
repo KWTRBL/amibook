@@ -11,7 +11,7 @@
             />
         </a-col>
       <a-col :span="8"  >
-          <a-upload name="file" :multiple="true" action="http://localhost:3000/barcode" :headers="headers" @change="handleChange">
+          <a-upload name="file" :multiple="true" action="http://10.66.6.136:3000/barcode" :headers="headers" @change="handleChange">
             <a-button type="primary" shape="circle" icon="upload" size="large"/>
           </a-upload>
         </a-col>
@@ -43,7 +43,7 @@ export default {
     onSearch (value) {
       console.log(value)
       var lst={code: value,id: this.getWho.id}
-          axios.post('http://localhost:3000/search',lst).then((res) => {
+          axios.post('http://10.66.6.136:3000/search',lst).then((res) => {
             // console.log(res.data[1].group)
             this.setListBook(res.data)
             return this.$router.push({name: 'finishsearch'})
@@ -58,7 +58,7 @@ export default {
       if (info.file.status === 'done') {
         console.log('--------------------------')
         console.log(info.file)
-        this.code = info.file.response
+        this.code = info.file.response.toString()
         var input = document.getElementById("input")
         input.value = this.code
         this.$message.success(`${info.file.name} file uploaded successfully`);

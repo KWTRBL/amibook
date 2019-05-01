@@ -9,7 +9,8 @@ export default new Vuex.Store({
     who: null,
     users_lst: null,
     lst_book: null,
-    code: 123
+    code: 123,
+    bookuser: null
   },
   mutations: {
     changePage(state, selected){
@@ -21,8 +22,7 @@ export default new Vuex.Store({
       console.log(state.who, who)
     },
     setUsers(state, val){
-      state.users_lst = val
-        
+      state.users_lst = val   
       // state.users_lst = filter_
     },
     setListBook(state,val){
@@ -30,7 +30,10 @@ export default new Vuex.Store({
     },
     setCode(state, val){
       state.code = val
-    }
+    },
+    setBookUser(state, val){
+      state.bookuser = val
+    },
   },
   getters: {
     getCurrentPage(state){
@@ -47,6 +50,9 @@ export default new Vuex.Store({
     },
     getCode(state){
       return state.code
-    }
+    },
+    getBookUser(state){
+      return state.bookuser
+    },
   }
 })

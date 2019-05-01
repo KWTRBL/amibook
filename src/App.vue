@@ -18,7 +18,7 @@ export default {
 
 <style>
 #app {
-  font-family: 'Lobster', cursive !IMPORTANT;
+  font-family: 'Jua', sans-serif !IMPORTANT;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

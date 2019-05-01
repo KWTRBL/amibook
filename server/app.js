@@ -5,7 +5,7 @@ const cors = require('cors')
 const javascriptBarcodeReader = require('javascript-barcode-reader')
 var bodyParser = require('body-parser')
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/book";
+var url = "mongodb://0.0.0.0:27017/book";
 
 app.use(cors())
 app.use(bodyParser.json({limit: '50mb'}))
@@ -22,8 +22,6 @@ function base64_encode(file) {
   // convert binary data to base64 encoded string
   return new Buffer(bitmap).toString('base64');
 }
-
-
 
 app.post('/fileupload', function(req, res) {
     var fstream;
@@ -59,8 +57,8 @@ app.post('/barcode', function(req, res) {
           .then(code => {
             // console.log(code)
             var n = '9'+code.toString();
-            // console.log(n)
-            res.send(n)
+            console.log(n.toString())
+            res.send(n.toString())
 
           })
           .catch(err => {

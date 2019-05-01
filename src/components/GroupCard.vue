@@ -105,7 +105,7 @@ export default {
       this.lst['id']=this.getWho.id
       this.lst['group']=val
       console.log(this.lst)
-      axios.post('http://localhost:3000/addg',this.lst).then((res) => {
+      axios.post('http://10.66.6.136:3000/addg',this.lst).then((res) => {
             console.log('success')
           }).catch((err) => {
             console.log('error')
@@ -116,7 +116,7 @@ export default {
       this.lst['id']=this.getWho.id
       this.lst['group']=val
       console.log(this.lst)
-      axios.post('http://localhost:3000/removeg',this.lst).then((res) => {
+      axios.post('http://10.66.6.136:3000/removeg',this.lst).then((res) => {
             console.log('success')
           }).catch((err) => {
             console.log('error')
@@ -125,7 +125,7 @@ export default {
   },
   created(){
         this.lst2['id']=this.getWho.id
-        axios.post('http://localhost:3000/getg',this.lst2).then((res) => {
+        axios.post('http://10.66.6.136:3000/getg',this.lst2).then((res) => {
             this.allgroup = res.data
             console.log('..................................')
             console.log(this.allgroup)

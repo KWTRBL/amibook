@@ -38,7 +38,7 @@
       :wrapper-col="{ span: 12 }"
       style="font-family: 'Jua', sans-serif;text-align: left;"
     >
-      <a-upload name="file" :multiple="true" action="http://localhost:3000/fileupload" :headers="headers" @change="handleChange">
+      <a-upload name="file" :multiple="true" action="http://10.66.6.136:3000/fileupload" :headers="headers" @change="handleChange">
         <a-button style="font-family: 'Jua';" size="large">
           <a-icon type="upload" /> Click to Upload
         </a-button>
@@ -62,7 +62,7 @@
           />
         </a-Col>
         <a-Col :span="12">
-          <a-upload name="file" :multiple="true" action="http://localhost:3000/barcode" :headers="headers" @change="handleChange2">
+          <a-upload name="file" :multiple="true" action="http://10.66.6.136:3000/barcode" :headers="headers" @change="handleChange2">
             <a-button type="primary" shape="circle" icon="upload" size="large"/>
           </a-upload>
         </a-Col>
@@ -112,7 +112,7 @@ export default {
         authorization: 'authorization-text',
       },
       img: null,
-      code: null,
+      code: "",
       book: null,
       name: null,
       note: null
@@ -160,7 +160,7 @@ export default {
           values['id'] = this.getWho.id
           values['img'] = this.img
           // console(values)
-          axios.post('http://localhost:3000/save', values).then((res) => {
+          axios.post('http://10.66.6.136:3000/save', values).then((res) => {
             console.log('success')
             this.$swal({
                 title: 'Are you sure?',
@@ -200,7 +200,8 @@ export default {
       if (info.file.status === 'done') {
         console.log('--------------------------')
         console.log(info.file)
-        this.code = info.file.response
+        this.code = info.file.response.toString()
+        console.log(code)
         this.$message.success(`${info.file.name} file uploaded successfully`);
       } else if (info.file.status === 'error') {
         this.$message.error(`${info.file.name} file upload failed.`);

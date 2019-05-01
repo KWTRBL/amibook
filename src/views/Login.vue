@@ -19,7 +19,7 @@ export default {
         ...mapMutations(['setUsers'])
     },
     created(){
-        axios.get("http://localhost:3000/users").then((res) => {
+        axios.get("http://10.66.6.136:3000/users").then((res) => {
                 // console.log(res)
                 this.setUsers(res.data)
             }).catch((error) => {

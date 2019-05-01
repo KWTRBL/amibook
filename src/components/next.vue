@@ -4,7 +4,7 @@
     size="large"
     :pagination="pagination"
     :dataSource="getListBook"
-    style="font-family: 'Jua', sans-serif;padding:20px;margin-top:80px;margin-left:200px;"
+    style="font-family: 'Jua', sans-serif;padding:20px;margin-top:160px;margin-left:200px;"
   >
       <div>{{msg}}</div>
         <a-list-item slot="renderItem" slot-scope="item" key="item['BookName']">
@@ -52,7 +52,7 @@ export default {
       var value = []
       value.push(val)
       // console.log(value)
-      axios.post('http://localhost:3000/contact',value).then((res) => {
+      axios.post('http://10.66.6.136:3000/contact',value).then((res) => {
             // console.log(res.data)
               this.$swal({
                 title: "Name:" + res.data[0]['name'],
